@@ -1,11 +1,150 @@
-$body-color: blue;
+$title-color: black;
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'K2D', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
-body {
-  color: $body-color;
+.page-content {
+  padding: 3rem 1rem;
+  padding-left: calc(200px + 50px); // this is the menu width + 50px
+}
+
+.blog-post-container {
+  max-width: 1200px;
+  max-height: 180px;
+  margin-top: 1.2rem;
+  margin-bottom: 2em;
+  padding-top: 2em;
+  display: inline-block;
+  border-top: 2px solid #f1f1f1;
+  hr {
+    margin: 1rem 0;
+  }
+}
+
+.blog-post {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+
+  .post-image {
+    flex-basis: 31%;
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+  p {
+    flex-shrink: 0;
+    flex-basis: 32%;
+    display: -webkit-box;
+    max-width: 80%;
+    opacity: 0.6;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.featured-blog-post {
+  display: block;
+  width: 60%;
+  .post-image {
+    img {
+      width: 100%;
+    }
+  }
+  p {
+    -webkit-line-clamp: 2;
+  }
+  .blog-post-header {
+    flex-basis: 1.8rem;
+  }
+}
+
+.blog-post-header {
+  flex-basis: 28%;
+  flex-grow: 0;
+  color: $title-color;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.blog-post-link-container {
+  text-decoration: none;
+  color: inherit;
+  opacity: 1;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .blog-post-header {
+    flex-basis: 65%;
+  }
+  .blog-post {
+    .post-image {
+      flex-basis: 30%;
+    }
+  }
+  .page-content {
+    padding: 1rem;
+  }
+  .blog-post {
+    p {
+      display: none;
+    }
+  }
+  .featured-blog-post {
+    width: 100%;
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .blog-post-header {
+    font-size: 2rem;
+  }
+  .featured-blog-post {
+    .blog-post-header {
+      font-size: 3rem;
+    }
+  }
+  .blog-post {
+    p {
+      font-size: 1rem;
+    }
+  }
+  .post-image {
+    img {
+        max-width: 90%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .blog-post-header {
+    font-size: 2.4rem;
+  }
+  .blog-post {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+  .post-image {
+    img {
+        max-width: 100%;
+    }
+  }
 }

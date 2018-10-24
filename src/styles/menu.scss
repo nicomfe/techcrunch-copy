@@ -21,20 +21,26 @@ $text: #777;
 }
 .mobile-menu {
   position: absolute;
+  box-sizing: border-box;
   width: 100vw;
   color: white;
   min-height: 100vh;
   background: linear-gradient(331deg,#00d301,#36c275 50%,#00a562);
   transform: translateX(150%);
-  padding: 100px 50px;
+  padding: 50px;
   ul + ul {
     padding-left: 15px;
   }
 }
 .mobile-content {
-  max-width: 400px;
+  margin-top: 2rem;
+  width: 400px;
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
+  ul {
+    margin: 0;
+  }
 }
 .menu-social {
   font-size: 1.2rem !important;

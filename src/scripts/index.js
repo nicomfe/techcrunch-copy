@@ -4,10 +4,6 @@ import $ from 'jquery';
 
 console.log('webpack starterkit');
 
-$( document ).ready(function() {
-    $(".mobile-content").load("./partials/menuItems.html");
-});
-
 window.toggleMenu = () => {
   $('.mobile-menu-container').toggleClass('overlay-container');
   $('.nav-bar').toggleClass('nav-bar-overlay');
